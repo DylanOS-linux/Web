@@ -64,6 +64,11 @@ está aquí, el asistente debe decir que no lo sabe.
 - La comunidad crece: cada actualización, idea y contribución
   ayuda a construir algo más grande. "Esto apenas comienza."
 
+## CONTACTO
+- Correo oficial de contacto: dylanoscontact@proton.me
+- Es el canal para dudas, sugerencias, reportes de problemas y
+  propuestas de colaboración con el proyecto.
+
 ## DESCARGAS
 - Estado actual: "Próximamente disponible." DylanOS aún no tiene
   una ISO pública; las descargas se habilitarán en el futuro.
