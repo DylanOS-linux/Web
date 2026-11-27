@@ -1,0 +1,20 @@
+@keyframes dylanos-breath {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.experience-breath {
+  animation: dylanos-breath 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-breath {
+    animation: none;
+    will-change: auto;
+  }
+}
