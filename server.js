@@ -234,6 +234,28 @@ function sendGithubStats(res) {
 // Extensiones estáticas que deben servirse directamente
 const staticExtensions = ['.js', '.css', '.json', '.xml', '.txt', '.png', '.webp', '.jpg', '.ico', '.svg', '.woff', '.woff2'];
 
+// Páginas que se publican como archivo propio en lugar de carpeta/index.html.
+const pageAliases = {
+  '/blog/': 'blog/blog.html'
+};
+
+// Las URLs limpias del blog (/blog/<slug>/) renderizan la misma página;
+// el cliente resuelve el artículo a partir de la ruta.
+function resolvePageAlias(pathname) {
+  if (pageAliases[pathname]) {
+    const generated = path.join(__dirname, 'blog', 'index.html');
+    return fs.existsSync(generated) ? null : pageAliases[pathname];
+  }
+
+  const match = pathname.match(/^\/blog\/([^/]+)\/?$/);
+  if (match && match[1].indexOf('.') === -1) {
+    const generated = path.join(__dirname, 'blog', match[1], 'index.html');
+    return fs.existsSync(generated) ? null : 'blog/blog.html';
+  }
+
+  return null;
+}
+
 function handleRequest(req, res) {
   let pathname;
   try {
@@ -274,15 +296,23 @@ function handleRequest(req, res) {
     return;
   }
 
+  // Normaliza las URLs de artículo del blog a su versión con barra final.
+  const blogPostMatch = pathname.match(/^\/blog\/([^/]+)$/);
+  if (blogPostMatch && blogPostMatch[1].indexOf('.') === -1) {
+    res.writeHead(301, { Location: pathname + '/' });
+    res.end();
+    return;
+  }
+
   // Resolución segura de rutas estáticas: normaliza, impide salir del
   // directorio raíz y bloquea archivos ocultos (.env, .git) y todo lo
   // que esté en "asistente ai/" fuera de su subcarpeta pública widget/.
   const relativePath = pathname.replace(/^\/+/, '');
-  const requestedPath = pathname === '/'
+  const requestedPath = resolvePageAlias(pathname) || (pathname === '/'
     ? 'index.html'
     : pathname.endsWith('/')
       ? `${relativePath}index.html`
-      : relativePath;
+      : relativePath);
 
   // Si la ruta apunta a un directorio sin barra final (p. ej. /nuestro_equipo),
   // redirige a la versión con barra para que se sirva su index.html.

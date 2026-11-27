@@ -3,5 +3,23 @@
     "api/**/*.js": {
       "includeFiles": "asistente ai/**"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/blog",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug([^./]+)",
+      "destination": "/blog/:slug/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/blog/",
+      "destination": "/blog/blog.html"
+    }
+  ]
 }

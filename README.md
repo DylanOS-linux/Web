@@ -14,6 +14,7 @@ Incluye el catálogo de descargas de DylanOS Crimson, información del proyecto,
 - Descargas alojadas en SourceForge.
 - Panel de administración para gestionar publicaciones.
 - CLI local para publicar, retirar y consultar versiones.
+- Blog oficial con artículos, filtros por categoría y RSS.
 - Asistente conversacional basado en IA.
 - Estadísticas públicas del repositorio de DylanOS.
 - Diseño adaptable para escritorio y dispositivos móviles.
@@ -88,6 +89,7 @@ El token es opcional y solo se necesita si deseas aumentar el límite de solicit
 
 ```bash
 npm run dev                 # Inicia el servidor local
+npm run blog:build          # Regenera artículos, feed RSS y sitemap del blog
 npm test                    # Ejecuta las pruebas
 npm run releases:status     # Muestra el estado de las publicaciones
 npm run releases:list       # Lista las versiones
@@ -100,6 +102,26 @@ npm run releases:verify     # Verifica las publicaciones
 npm run releases:admin:add   # Añade un administrador
 ```
 
+## Blog
+
+El blog oficial vive en `blog/` y comparte la navegación, el pie y los estilos base con la web principal.
+
+- `blog/posts.js`: contenido de los artículos. Es la fuente única de títulos, fechas, categorías y bloques de texto.
+- `blog/blog.html`: plantilla de la portada y de las páginas de artículo.
+- `blog/blog.js`: render, filtros y metadatos en el navegador.
+- `blog/blog.css`: estilos propios del blog.
+- `blog/<slug>/index.html`: página estática generada de cada artículo.
+- `blog/feed.xml`: canal RSS generado.
+- `sitemap.xml`: mapa del sitio generado con la portada del blog y cada artículo.
+
+Cada artículo se publica en `/blog/<slug>/` y se prerenderiza, por lo que el contenido y las metadatos funcionan aunque el visitante no ejecute JavaScript. Para añadir uno nuevo:
+
+1. Agrega un objeto al array de `blog/posts.js` con un `slug` único.
+2. Ejecuta `npm run blog:build` para regenerar las páginas de artículo, el feed RSS y el sitemap.
+3. Ejecuta `npm test` para validar slugs, categorías, feed, sitemap y rutas del servidor.
+
+Los artículos aceptan párrafos, encabezados, listas y bloques de código. El campo `demo` solo debe usarse para contenido de ejemplo; las publicaciones reales no lo incluyen.
+
 ## Estructura del proyecto
 
 ```text
@@ -107,6 +129,7 @@ npm run releases:admin:add   # Añade un administrador
 ├── api/                 # Endpoints y servicios del sitio
 ├── admin/               # Panel de administración
 ├── asistente ai/        # Configuración y widget del asistente
+├── blog/                # Blog oficial (contenido, estilos y feed RSS)
 ├── docs/                # Contenido de documentación
 ├── DylanOSdocs/         # Documentación adicional de DylanOS
 ├── images/              # Recursos gráficos

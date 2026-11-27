@@ -6,6 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "dev": "node server.js",
+    "blog:build": "node tools/blog/build.mjs",
     "test": "node --test tests/*/*.test.js",
     "releases:status": "node tools/releases/cli.mjs status",
     "releases:list": "node tools/releases/cli.mjs list",

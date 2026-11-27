@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <base href="/blog/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo publicamos una versión de DylanOS — DylanOS Blog</title>
+  <meta name="description" content="Del borrador a la descarga pública: metadatos en Supabase, archivos en SourceForge y verificación antes de anunciar.">
+  <meta name="theme-color" content="#050505">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" id="canonical-link" href="https://dylanoswebsite.vercel.app/blog/como-publicamos-una-version-de-dylanos/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="DylanOS">
+  <meta property="og:title" content="Cómo publicamos una versión de DylanOS — DylanOS Blog">
+  <meta property="og:description" content="Del borrador a la descarga pública: metadatos en Supabase, archivos en SourceForge y verificación antes de anunciar.">
+  <meta property="og:url" content="https://dylanoswebsite.vercel.app/blog/como-publicamos-una-version-de-dylanos/">
+  <meta property="og:image" content="https://dylanoswebsite.vercel.app/images/8357dd421_Screenshot_1-removebg-preview.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cómo publicamos una versión de DylanOS — DylanOS Blog">
+  <meta name="twitter:description" content="Del borrador a la descarga pública: metadatos en Supabase, archivos en SourceForge y verificación antes de anunciar.">
+
+  <link rel="alternate" type="application/rss+xml" title="DylanOS Blog — RSS" href="/blog/feed.xml">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Estilos compartidos de la web principal (navbar, footer y utilidades) -->
+  <link href="../styles/index-Dy2IKqv_.css" rel="stylesheet">
+  <!-- Estilos propios del blog -->
+  <link href="./blog.css" rel="stylesheet">
+
+  <!-- Contenido del blog y lógica de render -->
+  <script src="./posts.js" defer></script>
+  <script src="./blog.js" defer></script>
+
+  <script type="application/ld+json" id="post-jsonld">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Cómo publicamos una versión de DylanOS","description":"Del borrador a la descarga pública: metadatos en Supabase, archivos en SourceForge y verificación antes de anunciar.","datePublished":"2026-11-22","dateModified":"2026-11-22","inLanguage":"es","articleSection":"Releases","author":{"@type":"Organization","name":"Equipo DylanOS"},"publisher":{"@type":"Organization","name":"DylanOS","logo":{"@type":"ImageObject","url":"https://dylanoswebsite.vercel.app/images/8357dd421_Screenshot_1-removebg-preview.webp"}},"image":"https://dylanoswebsite.vercel.app/images/8357dd421_Screenshot_1-removebg-preview.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://dylanoswebsite.vercel.app/blog/como-publicamos-una-version-de-dylanos/"},"url":"https://dylanoswebsite.vercel.app/blog/como-publicamos-una-version-de-dylanos/"}</script>
+  <meta property="article:published_time" content="2026-11-22">
+  <meta property="article:section" content="Releases">
+</head>
+<body class="bg-[#050505] text-white antialiased">
+
+  <a class="blog-skip-link" href="#blog-main">Saltar al contenido</a>
+
+  <!-- ============================================================
+       Encabezado (mismas clases y estructura que la web principal)
+       ============================================================ -->
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="transition-all duration-300 glass-strong border-b border-white/5">
+      <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="Navegación principal">
+        <a href="../#inicio" class="flex items-center gap-2.5 group">
+          <span class="inline-block relative h-8 w-8 object-contain transition-transform group-hover:scale-105">
+            <img src="../images/8357dd421_Screenshot_1-removebg-preview.webp" loading="lazy" class="w-full h-full inset-0 absolute object-contain" alt="DylanOS">
+          </span>
+          <span class="text-lg font-semibold tracking-tight">Dylan<span class="text-[#FF2B2B]">OS</span></span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-1">
+          <a href="../#inicio" class="px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors">Inicio</a>
+          <a href="../#caracteristicas" class="px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors">Características</a>
+          <a href="../#experiencia" class="px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors">Experiencia</a>
+          <a href="../#comunidad" class="px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors">Comunidad</a>
+          <a href="../#descargas" class="px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors">Descargas</a>
+          <a href="./" class="px-4 py-2 text-sm text-white transition-colors" aria-current="page">Blog</a>
+          <a href="mailto:dylanoscontact@proton.me" class="px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors">Contacto</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="../#descargas" class="hidden md:inline-flex items-center gap-2 bg-[#FF2B2B] hover:bg-[#ff4444] text-white text-sm font-medium px-4 py-2 rounded-full transition-colors glow-red">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            Descargar
+          </a>
+          <button id="menu-toggle" class="md:hidden p-2 text-zinc-300 hover:text-white" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Menú móvil -->
+      <div id="mobile-menu" class="md:hidden overflow-hidden glass-strong border-b border-white/5 hidden">
+        <div class="px-5 py-4 flex flex-col gap-1">
+          <a href="../#inicio" class="px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors">Inicio</a>
+          <a href="../#caracteristicas" class="px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors">Características</a>
+          <a href="../#experiencia" class="px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors">Experiencia</a>
+          <a href="../#comunidad" class="px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors">Comunidad</a>
+          <a href="../#descargas" class="px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors">Descargas</a>
+          <a href="./" class="px-4 py-2 text-sm text-white transition-colors" aria-current="page">Blog</a>
+          <a href="mailto:dylanoscontact@proton.me" class="px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors">Contacto</a>
+          <a href="../#descargas" class="mt-2 inline-flex items-center justify-center gap-2 bg-[#FF2B2B] hover:bg-[#ff4444] text-white text-sm font-medium px-4 py-2 rounded-full transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            Descargar
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="blog-main">
+    <!-- ============================================================
+         Hero del blog
+         ============================================================ -->
+    <section class="blog-hero" id="blog-hero" hidden aria-labelledby="blog-title">
+      <div class="blog-hero__grid" aria-hidden="true"></div>
+      <div class="blog-hero__glow blog-hero__glow--one" aria-hidden="true"></div>
+      <div class="blog-hero__glow blog-hero__glow--two" aria-hidden="true"></div>
+
+      <div class="blog-container blog-hero__inner">
+        <div class="blog-hero__content">
+          <a class="blog-back" href="../">
+            <span aria-hidden="true">←</span>
+            Volver a DylanOS
+          </a>
+          <span class="blog-eyebrow">
+            <span class="blog-eyebrow__dot" aria-hidden="true"></span>
+            Blog oficial
+          </span>
+          <h1 id="blog-title" class="blog-title">DylanOS <span>Blog</span></h1>
+          <p class="blog-description">
+            Noticias, actualizaciones, desarrollo y novedades de DylanOS.
+            Un espacio para seguir el proyecto, entender cómo se construye y compartir ideas con la comunidad.
+          </p>
+          <div class="blog-hero__meta">
+            <span>Noticias del proyecto</span>
+            <span class="blog-meta-sep" aria-hidden="true"></span>
+            <span>Desarrollo, guías y comunidad</span>
+            <span class="blog-meta-sep" aria-hidden="true"></span>
+            <a class="blog-rss-link" href="./feed.xml">Suscribirse por RSS</a>
+          </div>
+        </div>
+
+        <aside class="blog-hero__terminal glass-strong" aria-label="Presentación del blog">
+          <div class="blog-terminal__bar">
+            <span class="blog-terminal__dot blog-terminal__dot--red"></span>
+            <span class="blog-terminal__dot"></span>
+            <span class="blog-terminal__dot"></span>
+            <span class="blog-terminal__title">dylanos — blog</span>
+          </div>
+          <div class="blog-terminal__body" aria-hidden="true">
+            <span class="blog-terminal__line"><span class="blog-terminal__prompt">$</span> cat blog/README.md</span>
+            <span class="blog-terminal__line blog-terminal__muted">Noticias, desarrollo y comunidad.</span>
+            <span class="blog-terminal__line"><span class="blog-terminal__prompt">$</span> ls categorías</span>
+            <span class="blog-terminal__line blog-terminal__red">Noticias  Historia  Desarrollo</span>
+            <span class="blog-terminal__line blog-terminal__red">Actualizaciones  Tutoriales</span>
+            <span class="blog-terminal__line blog-terminal__red">Comunidad  Releases</span>
+            <span class="blog-terminal__line"><span class="blog-terminal__prompt">$</span> <span class="blog-terminal__cursor"></span></span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Vista de listado
+         ============================================================ -->
+    <div id="blog-index" hidden>
+      <section class="blog-section blog-featured" aria-labelledby="featured-title">
+        <div class="blog-container">
+          <div class="blog-section__head">
+            <div>
+              <span class="blog-section__eyebrow">Destacado</span>
+              <h2 id="featured-title" class="blog-section__title">Artículo destacado</h2>
+            </div>
+            <p class="blog-section__hint">El punto de partida para conocer el blog.</p>
+          </div>
+          <div id="featured-post" class="featured-slot"></div>
+        </div>
+      </section>
+
+      <section class="blog-section blog-archive" aria-labelledby="archive-title">
+        <div class="blog-container">
+          <div class="blog-section__head">
+            <div>
+              <span class="blog-section__eyebrow">Archivo</span>
+              <h2 id="archive-title" class="blog-section__title">Más publicaciones</h2>
+            </div>
+            <p class="blog-section__hint" id="posts-count">Cargando artículos…</p>
+          </div>
+
+          <div id="blog-alert" class="blog-alert" role="status" hidden></div>
+
+          <div id="blog-filters" class="blog-filters" role="group" aria-label="Filtrar artículos por categoría"></div>
+          <p id="posts-status" class="sr-only" aria-live="polite"></p>
+
+          <div id="posts-grid" class="posts-grid"></div>
+          <p id="posts-empty" class="blog-empty" hidden>No hay artículos en esta categoría.</p>
+        </div>
+      </section>
+
+      <section class="blog-note" aria-labelledby="blog-note-title">
+        <div class="blog-container">
+          <div class="blog-note__inner glass">
+            <div>
+              <span class="blog-section__eyebrow">Sigue el proyecto</span>
+              <h2 id="blog-note-title" class="blog-note__title">Las novedades, sin ruido.</h2>
+              <p>
+                Publicamos cuando hay algo confirmado: avances de desarrollo, cambios en el sistema,
+                guías y versiones disponibles. Puedes seguir el blog por RSS o participar en el repositorio.
+              </p>
+            </div>
+            <div class="blog-note__actions">
+              <a class="blog-btn blog-btn--primary" href="https://github.com/dylanneymarmontalvo2014-lgtm/DylanOS" target="_blank" rel="noopener noreferrer">Ir a GitHub</a>
+              <a class="blog-btn blog-btn--ghost" href="./feed.xml">RSS del blog</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================
+         Vista de artículo (se activa con ?post=slug)
+         ============================================================ -->
+    <section id="post-view" class="blog-post-view" aria-labelledby="post-title">
+      <div class="blog-container blog-post-container">
+        <a class="blog-back" href="./">
+          <span aria-hidden="true">←</span>
+          Volver al blog
+        </a>
+
+        <article class="blog-article glass-strong">
+          <div class="blog-article__meta">
+            <span id="post-category" class="post-category">Releases</span>
+            <span id="post-demo-badge" class="demo-badge" hidden>Ejemplo</span>
+          </div>
+          <h1 id="post-title" tabindex="-1">Cómo publicamos una versión de DylanOS</h1>
+          <p id="post-excerpt" class="blog-article__lede">Del borrador a la descarga pública: metadatos en Supabase, archivos en SourceForge y verificación antes de anunciar.</p>
+          <div class="blog-article__byline">
+            <span id="post-author">Equipo DylanOS</span>
+            <span aria-hidden="true">·</span>
+            <time id="post-date" datetime="2026-11-22">22 de noviembre de 2026</time>
+            <span aria-hidden="true">·</span>
+            <span id="post-reading-time">2 min de lectura</span>
+          </div>
+
+          <div id="post-visual" class="post-visual post-visual--releases blog-article__visual" data-glyph="#" role="img" aria-label="Portada: Releases"><span class="post-visual__tag">Releases</span><span class="post-visual__code">01</span></div>
+          <div id="post-content" class="blog-article__content"><p>Publicar una ISO no consiste solo en subir un archivo. El sistema de versiones de DylanOS separa metadatos, archivos y verificación para que cada descarga pública sea trazable y reproducible.</p><h2>Dónde vive cada cosa</h2><ul><li>Supabase PostgreSQL guarda canales, estados, tamaño, SHA-256 y la ruta del archivo.</li><li>SourceForge aloja y distribuye las ISOs mediante su red de espejos.</li><li>Vercel sirve la web y las funciones de configuración y verificación.</li><li>Ninguna ISO atraviesa una función de Vercel ni se almacena en PostgreSQL.</li></ul><h2>Tres canales y tres estados</h2><p>Cada publicación pertenece a un canal —pre-beta, beta o stable— y tiene un estado: borrador, publicado o retirado. Solo puede existir una versión principal publicada por canal; al promover una nueva, la anterior pasa al historial sin que su archivo se borre.</p><h2>La ruta es inmutable</h2><p>Los archivos se guardan con una ruta que incluye un identificador único de carga, por ejemplo canal/versión/uuid/nombre.iso. Así, reutilizar un nombre o un número de versión nunca sobrescribe una descarga existente.</p><h2>Verificar antes de publicar</h2><p>Antes de crear el registro, el sistema comprueba que la URL pública responda y que el tamaño coincida. El SHA-256 se calcula en local y se conserva junto a la versión. La comprobación de tamaño confirma que el archivo está completo; el hash permite verificar su integridad más adelante.</p><p>SourceForge replica los archivos en varios espejos. Si el enlace aún no está listo, el sistema reintenta en lugar de simular el progreso o crear una fila incompleta.</p><h2>Publicar y retirar</h2><p>La promoción de una versión es una operación atómica: retira la principal anterior y publica la nueva dentro de la misma transacción. Retirar una versión conserva el archivo y su enlace histórico. Los borradores y las mutaciones solo son accesibles para administradores autorizados.</p></div>
+
+          <div id="post-notice" class="blog-article__notice" hidden>
+            <strong>Contenido de demostración.</strong>
+            Este artículo es un ejemplo y no representa un anuncio oficial de DylanOS.
+          </div>
+
+          <div class="blog-article__footer">
+            <a class="blog-btn blog-btn--ghost" href="./">
+              <span aria-hidden="true">←</span>
+              Volver al blog
+            </a>
+            <a class="blog-btn blog-btn--primary" href="../#descargas">Explorar DylanOS</a>
+          </div>
+        </article>
+
+        <section id="post-related" class="blog-related" aria-labelledby="post-related-title">
+          <div class="blog-section__head">
+            <div>
+              <span class="blog-section__eyebrow">Continúa</span>
+              <h2 id="post-related-title" class="blog-section__title">Sigue leyendo</h2>
+            </div>
+            <p class="blog-section__hint">Más publicaciones del blog.</p>
+          </div>
+          <div id="post-related-grid" class="posts-grid posts-grid--related"><article class="post-card" style="--card-index:0"><div class="post-visual post-visual--historia post-card__visual" data-glyph="01" role="img" aria-label="Portada: Historia"><img class="post-visual__img" src="/blog/images/el-comienzo-de-dylanos.svg" alt="" loading="lazy" decoding="async"><span class="post-visual__tag">Historia</span><span class="post-visual__code">01</span></div><div class="post-card__body"><div class="post-card__top"><span class="post-category">Historia</span></div><h3 class="post-card__title"><a href="/blog/el-comienzo-de-dylanos-donde-todo-empezo/">El comienzo de DylanOS: donde todo empezó</a></h3><p class="post-card__excerpt">El 6 de agosto de 2026 quedó registrado el primer commit de DylanOS. Esta es la historia de ese punto de partida.</p><div class="post-card__meta"><div class="post-meta"><span>DylanOS Team</span><span class="post-meta__sep" aria-hidden="true"></span><time datetime="2026-08-06">6 de agosto de 2026</time><span class="post-meta__sep" aria-hidden="true"></span><span>2 min de lectura</span></div></div><a class="post-card__link" href="/blog/el-comienzo-de-dylanos-donde-todo-empezo/">Leer más <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div></article><article class="post-card" style="--card-index:1"><div class="post-visual post-visual--noticias post-card__visual" data-glyph="//" role="img" aria-label="Portada: Noticias"><span class="post-visual__tag">Noticias</span><span class="post-visual__code">02</span></div><div class="post-card__body"><div class="post-card__top"><span class="post-category">Noticias</span></div><h3 class="post-card__title"><a href="/blog/bienvenido-al-blog-de-dylanos/">Bienvenido al blog de DylanOS</a></h3><p class="post-card__excerpt">Abrimos un espacio oficial para contar cómo avanza DylanOS: desarrollo, versiones, guías y comunidad.</p><div class="post-card__meta"><div class="post-meta"><span>Equipo DylanOS</span><span class="post-meta__sep" aria-hidden="true"></span><time datetime="2026-11-27">27 de noviembre de 2026</time><span class="post-meta__sep" aria-hidden="true"></span><span>1 min de lectura</span></div></div><a class="post-card__link" href="/blog/bienvenido-al-blog-de-dylanos/">Leer más <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div></article></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       Pie de la web (mismas clases y estructura que la web principal)
+       ============================================================ -->
+  <footer class="border-t border-white/5 py-12">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div class="max-w-sm">
+          <div class="flex items-center gap-2.5">
+            <span class="inline-block relative h-7 w-7 object-contain">
+              <img src="../images/8357dd421_Screenshot_1-removebg-preview.webp" loading="lazy" class="w-full h-full inset-0 absolute object-contain" alt="DylanOS">
+            </span>
+            <span class="text-base font-semibold">Dylan <span class="text-[#FF2B2B]">OS</span></span>
+          </div>
+          <p class="mt-3 text-sm text-zinc-500 leading-relaxed">DylanOS: una nueva forma de experimentar Linux.</p>
+          <p class="mt-2 text-sm text-zinc-400">Contacto: <a href="mailto:dylanoscontact@proton.me" class="hover:text-white transition-colors">dylanoscontact@proton.me</a></p>
+        </div>
+
+        <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Enlaces del pie">
+          <a href="../#inicio" class="text-sm text-zinc-400 hover:text-white transition-colors">Inicio</a>
+          <a href="../#caracteristicas" class="text-sm text-zinc-400 hover:text-white transition-colors">Características</a>
+          <a href="https://github.com/dylanneymarmontalvo2014-lgtm/DylanOS" target="_blank" rel="noopener noreferrer" class="text-sm text-zinc-400 hover:text-white transition-colors">GitHub</a>
+          <a href="../DylanOSdocs/" class="text-sm text-zinc-400 hover:text-white transition-colors">Documentación</a>
+          <a href="../#comunidad" class="text-sm text-zinc-400 hover:text-white transition-colors">Comunidad</a>
+          <a href="./" class="text-sm text-white transition-colors" aria-current="page">Blog</a>
+          <a href="../nuestro_equipo/" class="text-sm text-zinc-400 hover:text-white transition-colors">Nuestro equipo</a>
+          <a href="mailto:dylanoscontact@proton.me" class="text-sm text-zinc-400 hover:text-white transition-colors">Contacto</a>
+        </nav>
+      </div>
+
+      <div class="mt-10 pt-6 border-t border-white/5 text-xs text-zinc-600">
+        © 2026 DylanOS. Proyecto independiente.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

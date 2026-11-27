@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DylanOS Blog</title>
+    <link>https://dylanoswebsite.vercel.app/blog/</link>
+    <description>Noticias, desarrollo, actualizaciones, tutoriales, comunidad y releases de DylanOS.</description>
+    <language>es</language>
+    <lastBuildDate>Fri, 27 Nov 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://dylanoswebsite.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Bienvenido al blog de DylanOS</title>
+      <link>https://dylanoswebsite.vercel.app/blog/bienvenido-al-blog-de-dylanos/</link>
+      <guid isPermaLink="true">https://dylanoswebsite.vercel.app/blog/bienvenido-al-blog-de-dylanos/</guid>
+      <category>Noticias</category>
+      <pubDate>Fri, 27 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Abrimos un espacio oficial para contar cómo avanza DylanOS: desarrollo, versiones, guías y comunidad.</description>
+    </item>
+
+    <item>
+      <title>Cómo publicamos una versión de DylanOS</title>
+      <link>https://dylanoswebsite.vercel.app/blog/como-publicamos-una-version-de-dylanos/</link>
+      <guid isPermaLink="true">https://dylanoswebsite.vercel.app/blog/como-publicamos-una-version-de-dylanos/</guid>
+      <category>Releases</category>
+      <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Del borrador a la descarga pública: metadatos en Supabase, archivos en SourceForge y verificación antes de anunciar.</description>
+    </item>
+
+    <item>
+      <title>Cómo se organizan las actualizaciones</title>
+      <link>https://dylanoswebsite.vercel.app/blog/como-organizamos-las-actualizaciones/</link>
+      <guid isPermaLink="true">https://dylanoswebsite.vercel.app/blog/como-organizamos-las-actualizaciones/</guid>
+      <category>Actualizaciones</category>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Canales, estados e historial: las reglas que hacen que una actualización sea clara y reversible.</description>
+    </item>
+
+    <item>
+      <title>Dentro de la web oficial de DylanOS</title>
+      <link>https://dylanoswebsite.vercel.app/blog/dentro-de-la-web-oficial-de-dylanos/</link>
+      <guid isPermaLink="true">https://dylanoswebsite.vercel.app/blog/dentro-de-la-web-oficial-de-dylanos/</guid>
+      <category>Desarrollo</category>
+      <pubDate>Sun, 08 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Cómo está construido el sitio: páginas ligeras, Node.js, Vercel, Supabase y pruebas automatizadas.</description>
+    </item>
+
+    <item>
+      <title>Consultar versiones desde la CLI</title>
+      <link>https://dylanoswebsite.vercel.app/blog/consultar-versiones-desde-la-cli/</link>
+      <guid isPermaLink="true">https://dylanoswebsite.vercel.app/blog/consultar-versiones-desde-la-cli/</guid>
+      <category>Tutoriales</category>
+      <pubDate>Fri, 30 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Comandos básicos para revisar el estado, el historial y las publicaciones del sistema de versiones.</description>
+    </item>
+
+    <item>
+      <title>El diseño de DylanOS: coherencia antes que ruido</title>
+      <link>https://dylanoswebsite.vercel.app/blog/el-diseno-de-dylanos-coherencia-antes-que-ruido/</link>
+      <guid isPermaLink="true">https://dylanoswebsite.vercel.app/blog/el-diseno-de-dylanos-coherencia-antes-que-ruido/</guid>
+      <category>Desarrollo</category>
+      <pubDate>Tue, 20 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Menos elementos, mejores decisiones: los principios visuales que comparten el sistema y la web.</description>
+    </item>
+
+    <item>
+      <title>Cómo seguir el proyecto y participar</title>
+      <link>https://dylanoswebsite.vercel.app/blog/como-seguir-el-proyecto-y-participar/</link>
+      <guid isPermaLink="true">https://dylanoswebsite.vercel.app/blog/como-seguir-el-proyecto-y-participar/</guid>
+      <category>Comunidad</category>
+      <pubDate>Mon, 12 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Los canales oficiales para seguir las novedades, leer la documentación y compartir ideas con el equipo.</description>
+    </item>
+
+    <item>
+      <title>El comienzo de DylanOS: donde todo empezó</title>
+      <link>https://dylanoswebsite.vercel.app/blog/el-comienzo-de-dylanos-donde-todo-empezo/</link>
+      <guid isPermaLink="true">https://dylanoswebsite.vercel.app/blog/el-comienzo-de-dylanos-donde-todo-empezo/</guid>
+      <category>Historia</category>
+      <pubDate>Thu, 06 Aug 2026 12:00:00 GMT</pubDate>
+      <description>El 6 de agosto de 2026 quedó registrado el primer commit de DylanOS. Esta es la historia de ese punto de partida.</description>
+    </item>
+  </channel>
+</rss>
